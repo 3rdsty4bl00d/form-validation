@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <meta charset = "UTF-8" />
+        <title>
+            Log In Page
+        </title>
+        <script type="text/javascript">
+            //form validation will occur here
+             
+            </script>
+        <style>
+            .form
+            {
+                color: Red;
+                margin: center;
+            }
+            </style>
+    </head>
+    <body>
+        <center><h1>Log In Page</h1></center>
+        <hr />
+        <form action="Animation.html" name="myform" onsubmit="return validate();">
+            <table cellspacing = "2" cellpadding  = "2" border = "1">
+                <tr>
+                    <td align="center">Name</td>
+                    <td><input type="text" name="Name" /></td>
+                </tr>
+                <tr>
+                    <td align="center">Email</td>
+                    <td><input type="text" name="Email" /></td>
+                </tr>
+                <tr>
+                    <td align="center">ZipCode</td>
+                    <td><input type="text" name="zip" /></td>
+                </tr>
+                <tr>
+                    <td align = "center">Password</td>
+                    <td><input type = "password" name = "Password" /></td>
+                </tr>
+                <tr>
+                    <td align = "center">Re-enter password</td>
+                    <td><input type = "password" name = "Rpassword" /></td>
+                </tr>
+                <tr>
+                    <td align="center">Country</td>
+                    <td>
+                        <select name="country">
+                            <option value="-1" selected>[choose option]</option>
+                            <option value="1">Nepal</option>
+                            <option value="2">Any other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center"></td>
+                    <td><input type="submit" value="submit" /></td>
+                </tr>
+            </table>
+        </form>
+        <script type="text/javascript">
+            <!--
+                
+                function validate()
+            {
+                var emailid = document.myform.Email.value;
+                var atpos = emailid.indexOf("@");
+                var dotpos = emailid.lastIndexOf(".");
+                var passwd = document.myform.Password.value;
+                var Rpasswd = document.myform.Rpassword.value;
+                if(document.myform.Name.value == "")
+                {
+                    alert("Please provide your name!");
+                    document.myform.Name.focus();
+                    return false;
+                }
+                
+                if(emailid == "" || atpos < 1 || dotpos - atpos < 2 || emailid.length - dotpos < 2)
+                {
+                    alert("Please provide your valid Email address");
+                    document.myform.Email.focus();
+                    return false;
+                }
+                if(document.myform.zip.value == "" || isNaN(document.myform.zip.value) || document.myform.zip.value.length!=5)
+                {
+                    alert("Please provide your zip code in the format #####");
+                    document.myform.zip.focus();
+                    return false;
+                }
+                if(passwd == "")
+                {
+                    alert("Please enter a password!");
+                    document.myform.Password.focus();
+                    return false;
+                }
+                if(Rpasswd == "")
+                {
+                    alert("Please Re-enter your password!");
+                    document.myform.Rpassword.focus();
+                    return false;
+                }
+                if(passwd.length > 8 || Rpasswd.length > 8)
+                {
+                    alert("Your password must be lesser than eigth digit!");
+                    document.myform.Password.focus();
+                    return false;
+                }
+                if(passwd != Rpasswd)
+                {
+                    alert("Please chech your password again!");
+                    document.myform.Rpassword.focus();
+                    return false;
+                }
+                if(document.myform.country.value == '-1')
+                {
+                    alert("Please provide your country");
+                    return false;
+                }
+                return true;
+            }
+            
+                //-->
+            </script>
+    </body>
+</html>
